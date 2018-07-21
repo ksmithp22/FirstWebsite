@@ -18,28 +18,37 @@
   display: flex;
 }
 
-#shower{
-  flex-basis: 100%|auto;
+#screen{
+  flex-basis: 100%;
+}
+#equal{
+  flex-basis: 100%;
 }
   </style>
   <body>
     <div class="flex-container">
-      <div class="regular-div" id="shower">1</div>
-      <div class="regular-div">2</div>
-      <div class="regular-div">3</div>
-      <div class="regular-div">4</div>
-      <div class="regular-div">5</div>
-      <div class="regular-div">6</div>
-      <div class="regular-div">7</div>
-      <div class="regular-div">8</div>
-      <div class="regular-div">9</div>
-      <div class="regular-div">10</div>
-      <div class="regular-div">11</div>
-      <div class="regular-div">12</div>
-      <div class="regular-div">13</div>
-      <div class="regular-div">14</div>
-      <div class="regular-div">15</div>
+      <div id="screen" class="regular-div">screen</div>
+      <div id="zero" class="regular-div">0</div>
+      <div id="one" class="regular-div">1</div>
+      <div id="two" class="regular-div">2</div>
+      <div id="three" class="regular-div">3</div>
+      <div id="four" class="regular-div">4</div>
+      <div id="five" class="regular-div">5</div>
+      <div id="six" class="regular-div">6</div>
+      <div id="seven" class="regular-div">7</div>
+      <div id="eight" class="regular-div">8</div>
+      <div id="nine" class="regular-div">9</div>
+      <div id="plus" class="regular-div">+</div>
+      <div id="minus" class="regular-div">-</div>
+      <div id="divide" class="regular-div">/</div>
+      <div id="multiply" class="regular-div">*</div>
+      <div id="equal" class="regular-div" onclick="equals()">=</div>
     </div>
+<script>
+function equals(){
+  alert("equals")
+}
 
+</script>
   </body>
 </html>
