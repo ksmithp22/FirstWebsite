@@ -17,7 +17,9 @@
   font-size: 30px;
   display: flex;
 }
-
+body{
+  background-color: rgb(237, 239, 225);
+}
 #screen{
   flex-basis: 100%;
 }
@@ -27,7 +29,7 @@
   </style>
   <body>
     <div class="flex-container">
-      <div id="screen" class="regular-div">screen</div>
+      <div id="screen" class="regular-div"></div>
       <div id="zero" class="regular-div" onclick="zero()">0</div>
       <div id="one" class="regular-div" onclick="one()">1</div>
       <div id="two" class="regular-div" onclick="two()">2</div>
@@ -42,53 +44,88 @@
       <div id="minus" class="regular-div" onclick="minus()">-</div>
       <div id="divide" class="regular-div" onclick="divide()">/</div>
       <div id="multiply" class="regular-div" onclick="multiply()">*</div>
+      <div id="clear" class="regular-div" onclick="clearScreen()">C</div>
       <div id="equal" class="regular-div" onclick="equal()">=</div>
     </div>
 <script>
+var screen= document.getElementById("screen");
+var storedValue= 0;
+var solution = document.getElementById("equal");
+var operation = "plus"
+
 function equal(){
-  alert("equal")
+  var output=0;
+  if(operation=="plus")
+  {
+    output=storedValue+Number(screen.innerHTML)
+  }
+  else if(operation=="minus")
+  {
+    output=storedValue-Number(screen.innerHTML)
+  }
+  else if(operation=="multiply"){
+    output=storedValue*Number(screen.innerHTML)
+  }
+  else if(operation=="divide")
+    output=storedValue/Number(screen.innerHTML)
+
+
+
+
+// set screen to output
 }
 function multiply(){
-  alert("multiply")
+  storedValue = Number(screen.innerHTML);
+  screen.innerHTML=storedValue*Number(screen.innerHTML);
+  operation = "multiply";
 }
 function divide(){
-  alert("divide")
+  storedValue = Number(screen.innerHTML);
+  screen.innerHTML=storedValue/Number(screen.innerHTML);
+  operation = "divide";
 }
 function minus(){
-  alert("minus")
+  storedValue = Number(screen.innerHTML);
+  screen.innerHTML=storedValue-Number(screen.innerHTML);
+  operation = "minus";
 }
 function plus(){
-  alert("plus")
+  storedValue = Number(screen.innerHTML);
+  screen.innerHTML=storedValue+Number(screen.innerHTML);
+  operation = "plus";
+}
+function clearScreen(){
+  screen.innerHTML=""
 }
 function nine(){
-  alert("nine")
+  screen.innerHTML=screen.innerHTML+9
 }
 function eight(){
-  alert("eight")
+  screen.innerHTML=screen.innerHTML+8
 }
 function seven(){
-  alert("seven")
+    screen.innerHTML=screen.innerHTML+7
 }
 function six(){
-  alert("six")
+    screen.innerHTML=screen.innerHTML+6
 }
 function five(){
-  alert("five")
+    screen.innerHTML=screen.innerHTML+5
 }
 function four(){
-  alert("four")
+    screen.innerHTML=screen.innerHTML+4
 }
 function three(){
-  alert("three")
+  screen.innerHTML=screen.innerHTML+3
 }
 function two(){
-  alert("two")
+    screen.innerHTML=screen.innerHTML+2
 }
 function one(){
-  alert("one")
+    screen.innerHTML=screen.innerHTML+1
 }
 function zero(){
-  alert("zero")
+    screen.innerHTML=screen.innerHTML+0
 }
 </script>
   </body>
