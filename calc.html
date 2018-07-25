@@ -12,16 +12,18 @@
   background-color: rgb(215, 129, 106);
   width: 100px;
   margin: 10px;
-  text-align: center;
   line-height: 75px;
   font-size: 30px;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 body{
   background-color: rgb(237, 239, 225);
 }
 #screen{
   flex-basis: 100%;
+  height: 75px;
 }
 #equal{
   flex-basis: 100%;
@@ -30,16 +32,16 @@ body{
   <body>
     <div class="flex-container">
       <div id="screen" class="regular-div"></div>
-      <div id="zero" class="regular-div" onclick="zero()">0</div>
-      <div id="one" class="regular-div" onclick="one()">1</div>
-      <div id="two" class="regular-div" onclick="two()">2</div>
-      <div id="three" class="regular-div" onclick="three()">3</div>
-      <div id="four" class="regular-div" onclick="four()">4</div>
-      <div id="five" class="regular-div" onclick="five()">5</div>
-      <div id="six" class="regular-div" onclick="six()">6</div>
-      <div id="seven" class="regular-div" onclick="seven()">7</div>
-      <div id="eight" class="regular-div" onclick="eight()">8</div>
-      <div id="nine" class="regular-div" onclick="nine()">9</div>
+      <div id="zero" class="regular-div" onclick="number(0)">0</div>
+      <div id="one" class="regular-div" onclick="number(1)">1</div>
+      <div id="two" class="regular-div" onclick="number(2)">2</div>
+      <div id="three" class="regular-div" onclick="number(3)">3</div>
+      <div id="four" class="regular-div" onclick="number(4)">4</div>
+      <div id="five" class="regular-div" onclick="number(5)">5</div>
+      <div id="six" class="regular-div" onclick="number(6)">6</div>
+      <div id="seven" class="regular-div" onclick="number(7)">7</div>
+      <div id="eight" class="regular-div" onclick="number(8)">8</div>
+      <div id="nine" class="regular-div" onclick="number(9)">9</div>
       <div id="plus" class="regular-div" onclick="plus()">+</div>
       <div id="minus" class="regular-div" onclick="minus()">-</div>
       <div id="divide" class="regular-div" onclick="divide()">/</div>
@@ -70,11 +72,12 @@ function equal(){
     output=storedValue/Number(screen.innerHTML)
   }
 
+  operation=""
 
 
 
 // set screen to output
-function equal(){
+
   screen.innerHTML=output;
 }
 function multiply(){
@@ -100,36 +103,13 @@ function plus(){
 function clearScreen(){
   screen.innerHTML=""
 }
-function nine(){
-  screen.innerHTML=screen.innerHTML+9
+function number(x){
+  if(operation==""){
+    screen.innerHTML=""
+  }
+  screen.innerHTML=screen.innerHTML+x
 }
-function eight(){
-  screen.innerHTML=screen.innerHTML+8
-}
-function seven(){
-    screen.innerHTML=screen.innerHTML+7
-}
-function six(){
-    screen.innerHTML=screen.innerHTML+6
-}
-function five(){
-    screen.innerHTML=screen.innerHTML+5
-}
-function four(){
-    screen.innerHTML=screen.innerHTML+4
-}
-function three(){
-  screen.innerHTML=screen.innerHTML+3
-}
-function two(){
-    screen.innerHTML=screen.innerHTML+2
-}
-function one(){
-    screen.innerHTML=screen.innerHTML+1
-}
-function zero(){
-    screen.innerHTML=screen.innerHTML+0
-}
+
 </script>
   </body>
 </html>
