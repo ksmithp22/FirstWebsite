@@ -66,32 +66,35 @@ function equal(){
   else if(operation=="multiply"){
     output=storedValue*Number(screen.innerHTML)
   }
-  else if(operation=="divide")
+  else if(operation=="divide"){
     output=storedValue/Number(screen.innerHTML)
+  }
 
 
 
 
 // set screen to output
+function equal(){
+  screen.innerHTML=output;
 }
 function multiply(){
   storedValue = Number(screen.innerHTML);
-  screen.innerHTML=storedValue*Number(screen.innerHTML);
+  screen.innerHTML="";
   operation = "multiply";
 }
 function divide(){
   storedValue = Number(screen.innerHTML);
-  screen.innerHTML=storedValue/Number(screen.innerHTML);
+  screen.innerHTML="";
   operation = "divide";
 }
 function minus(){
   storedValue = Number(screen.innerHTML);
-  screen.innerHTML=storedValue-Number(screen.innerHTML);
+  screen.innerHTML="";
   operation = "minus";
 }
 function plus(){
   storedValue = Number(screen.innerHTML);
-  screen.innerHTML=storedValue+Number(screen.innerHTML);
+  screen.innerHTML="";
   operation = "plus";
 }
 function clearScreen(){
